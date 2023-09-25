@@ -31,6 +31,10 @@ public class Calculate extends AppCompatActivity {
             output = (double) firstInt * (double) secondInt;
         }
         else if (op.equals("/")) {
+            if (secondInt == 0) {
+                textView.setText("Error: Divided by zero. Please do a different operation.");
+                return;
+            }
             output = (double) firstInt / (double) secondInt;
         }
         textView.setText(output.toString());
